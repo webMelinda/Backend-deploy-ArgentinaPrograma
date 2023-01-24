@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("persona") //localhost:8080/persona
-@CrossOrigin(origins ="http://localhost:4200") // porque se cruza con Angular
+@CrossOrigin(origins ="https://portfolio-frontend-melinda.web.app") // porque se cruza con Angular
 public class CPersona {
     
     @Autowired

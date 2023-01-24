@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("banner") //localhost:8080/bannna
-@CrossOrigin(origins = "http://localhost:4200") // porque se cruza con Angular
+@CrossOrigin(origins = "https://portfolio-frontend-melinda.web.app") // porque se cruza con Angular
 public class CBanner {
     @Autowired
     SBanner bannServ;
