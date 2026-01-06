@@ -1,7 +1,15 @@
-FROM amazoncorretto:17-alpine-jdk
+# --- Build stage ---
+FROM maven:3.9.6-eclipse-temurin-17 AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn -q -DskipTests package
 
-MAINTAINER melinda
+# --- Runtime stage ---
+FROM eclipse-temurin:17-jre-jammy
+WORKDIR /
+COPY --from=build /app/target/*SNAPSHOT.jar app.jar
 
-COPY target/portfolio.Web-0.0.1-SNAPSHOT.jar portfolio.Web-0.0.1-SNAPSHOT.jar
+ENV JAVA_OPTS=""
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar /app.jar"]
 
-ENTRYPOINT ["java","-jar","/portfolio.Web-0.0.1-SNAPSHOT.jar"]
