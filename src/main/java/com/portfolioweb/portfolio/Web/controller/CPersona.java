@@ -5,7 +5,6 @@ import com.portfolioweb.portfolio.Web.entity.Persona;
 import com.portfolioweb.portfolio.Web.service.SPersona;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("persona") //localhost:8080/persona
-@CrossOrigin(origins ="https://portfolio-frontend-melinda.web.app") // porque se cruza con Angular
 public class CPersona {
     
     @Autowired
