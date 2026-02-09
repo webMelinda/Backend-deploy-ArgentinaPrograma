@@ -5,7 +5,6 @@ import com.portfolioweb.portfolio.Web.entity.Habilidad_Blanda;
 import com.portfolioweb.portfolio.Web.service.SHabilidad_Blanda;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("soft") 
-@CrossOrigin(origins = "https://portfolio-frontend-melinda.web.app")
 public class CHabilidad_Blanda {
      @Autowired
     SHabilidad_Blanda blandServ;
